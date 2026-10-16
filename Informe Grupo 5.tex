@@ -1,0 +1,265 @@
+\documentclass[12pt,a4paper]{article}
+% 12pt:     Tamaño de fuente
+% a4paper: Tamaño de papel
+% article:  Formato artículo, está dividido por secciones y subsecciones. Otros formatos: report, letter, book, etc.
+
+\usepackage[spanish, es-tabla]{babel}
+% Configura en español los nombres de figuras, tablas, etc.
+\usepackage[utf8]{inputenc}                 % Permite el uso directo de tildes y otros.
+\usepackage{amsmath,amssymb}
+% Añade símbolos matemáticos para las ecuaciones.
+\usepackage{parskip}
+% Elimina la sangría
+\usepackage{geometry}
+% Permite modificar los márgenes de la página a gusto.
+\usepackage{multicol}
+% Ordena el cuerpo del documento en 2 o más columnas.
+\usepackage{graphicx}
+% Para poner imágenes.
+\usepackage{enumitem}
+% Para modificar los tags de los enumerate.
+\usepackage{array}
+% Para ordenar texto y ecuaciones.
+\usepackage{booktabs}
+% Proporciona las reglas \toprule, \midrule y \bottomrule para tablas.
+\usepackage{url}
+% Permite usar url que redirigen a la página web.
+\usepackage{hyperref}
+% Permite que se puedan clickear las urls, citas y referencias.
+\usepackage{float}
+
+\spanishdecimal{.} % punto decimal
+\geometry{margin=2cm} % margenes de la hoja
+\renewcommand{\baselinestretch}{1.3} % tamaño de las filas de las tablas
+
+\newcommand{\uveci}{\hat{\imath}} % vector unitario i
+\newcommand{\uvecj}{\hat{\jmath}} % vector unitario j
+\newcommand{\uveck}{\hat{k}} % vector unitario k
+
+\begin{document}
+
+\begin{center}
+{\Large\textbf{INFORME N°3}}
+
+{\LARGE\textbf{Ley de Hooke y constante elástica de un resorte}}
+
+\rule{\textwidth}{0.5pt}
+
+\begin{tabular}{ll}
+    \textbf{Estudiantes:} & Roberto Acevedo \\
+                          & Lisseth Aguilera \\
+                          & Mauricio Ortega \\
+                          & Samuel Saez \\[0.2cm]
+    \textbf{Profesora:}   & Constanza Rivas \\
+    \textbf{Ayudantes:}    & Nombre Apellido \\
+                           & Nombre Apellido\\[0.2cm]
+    \textbf{Fecha de entrega:} \today
+\end{tabular}
+
+\vspace{0.4cm}
+\rule{\textwidth}{0.5pt}
+
+\end{center}
+
+\section{Introducción}
+
+El estudio se centra en el comportamiento elástico de los cuerpos deformables, específicamente en la respuesta de un resorte ante la acción de una fuerza externa. Cuando un resorte es estirado o comprimido, experimenta una fuerza recuperadora que tiende a devolverlo a su longitud natural. Experimentalmente, la importancia de analizar la relación entre la fuerza aplicada ($F$) y la elongación ($x$) radica en comprobar la Ley de Hooke dentro del límite elástico, donde ambas magnitudes guardan una relación de proporcionalidad directa ($F = kx$). Esto permite verificar de forma empírica si el comportamiento mecánico del resorte se ajusta a los modelos teóricos ideales mediante el análisis gráfico y el uso de ajustes lineales.
+La constante elástica (k) representa una propiedad característica de cada resorte que cuantifica su oposición a ser deformado. Experimentalmente, su determinación a través de la pendiente de un ajuste lineal entre la fuerza y la elongación, es fundamental porque permite caracterizar y diferenciar la rigidez entre distintos resortes; un valor de k mayor indica un resorte más rígido y difícil de estirar, mientras que uno menor corresponde a uno más flexible.
+En muchas aplicaciones físicas e ingenieras, los sistemas mecánicos están compuestos por múltiples elementos elásticos combinados. La posibilidad de caracterizar un sistema de resortes conectados en serie mediante una constante elástica equivalente ($k_{1+2}$) es de gran importancia experimental y teórica, ya que simplifica el análisis del conjunto. Permite predecir y contrastar cómo se comportaría el sistema completo bajo una carga global aplicando las leyes de asociación (como la relación inversa para resortes en serie), evaluando si el modelo teórico representa con precisión el comportamiento colectivo de los componentes reales.
+
+\section{Fundamento teórico}
+
+Deduzcan y presenten las ecuaciones de:
+
+\begin{itemize}
+    \item Relación entre fuerza elástica y elongación (ley de Hooke)
+    \item Condición de equilibrio que lleva a determinar la fuerza
+\end{itemize}
+
+Indique además, sin necesidad de deducirlas completas, las ecuaciones de:
+
+\begin{itemize}
+    \item Constante elástica equivalente del sistema de resortes conectados en serie
+    \item Cálculo de propagación de error
+\end{itemize}
+
+En esta sección debe presentar las relaciones físicas y las deducciones matemáticas necesarias para analizar los resultados. No basta con enumerar fórmulas, sino que se debe explicar de dónde provienen y qué representan sus variables.
+
+\section{Procedimiento experimental}
+
+\subsection{Montaje} \label{Montaje}
+
+Para el proceso experimental utilizamos una regla para medir primero el largo de cada resorte sin ningun peso para saber posteriormente la extension del resorte relacionado con la fuerza que se le aplica, utilizando el peso de 4 masas distintas para medir dicha deformación conforme al peso puesto en cada resorte.
+Los elementos que utilizamos fueron:
+\begin{itemize}
+    \item $Resorte_1$ : Con un largo de $0,143m \pm  {0.0005}m$.
+    \item $Resorte_2$ : Con un largo de $0,195m \pm  {0.0005}m$.
+    \item $Masa_1$: Con una masa de $1,002 kg \pm {0,001}g$.
+    \item $Masa_2$: Con una masa de $0,500 kg \pm {0,001} g$.
+    \item $Masa_3$: Con una masa de $0,500 kg \pm {0,001} g$.
+    \item $Masa_4$: Con una Masa de $0,250 kg \pm {0,001} g$.
+\end{itemize}
+
+Para medir las magnitudes de el largo de los resortes y su extensión, la masa de cada pieza de masa utilizamos las siguientes herramientas:
+\begin{itemize}
+    \item Regla para medir el largo de los resortes y su extensión con las fuerzas aplicadas
+    \item Vascula para medir la masa de cada pieza y así realizar el calculo para saber cuantos newtons ejercen sobre los resortes al momento de dejarlos colgando en estos.
+\end{itemize}
+
+\subsection{Parte 1 - Determinar constante elástica de cada resorte} \label{Procedimiento-Parte-1}
+
+Para la medición de la longitud de cada resorte sin aplicar una fuerza externa sobre este, colocamos un instrumento con una regla al lado para medir la longitud total de cada resorte. Posteriormente, medimos con la báscula la masa de cada pieza. Después, utilizando esta masa, calculamos la aceleración de gravedad y la magnitud del peso para cada pieza de masa. De esta forma, podemos saber cuánta fuerza estamos aplicando a cada resorte. Tras estos cálculos, comenzamos a colocar las piezas de masa en distintas combinaciones para medir la extensión del resorte con cada distribución de masa.
+
+Para calcular los errores usamos:
+\begin{itemize}
+    \item Regla: al ser este un instrumento analógico, el error asociado es la mitad de la menor medida que puede hacer este, es decir, como la regla tiene una minima medida de $1 mm$ o $0,001 m$, el error asociado a esta es de $0,0005 m$, y este es el error que usamos para las longitudes 
+    \item Vascula: Al ser esta un instrumento digital el error asociado es el mismo valor que su menor medida, es decir $1g$ ó $0,001 kg$, y este es el valor que usamos para el error de las masas
+    \item Peso: para el error del peso utilizamos el valor del error de la masa y lo multiplicamos por la aceleración de gravedad para así tener el error de manera más simple de la misma forma que calculamos el valor del peso como magnitud.
+\end{itemize}
+
+Empezamos con $0,250kg$ para cada resorte y medimos la longitud total que alcanzaban. Después, a esa longitud se le restó la longitud inicial del resorte para obtener su extensión. La segunda combinación fue de $0,500kg$ por resorte, repitiendo el mismo proceso anterior: restar la longitud inicial del resorte a la longitud obtenida con el peso usado. La tercera combinación fue de $0,750kg$, repitiendo el proceso ya mencionado para calcular la extensión. La cuarta combinación fue de $1,002kg$ por resorte, para la cual nuevamente repetimos el proceso ya mencionado. La quinta combinación fue de $1,252kg$, en la que nuevamente repetimos el cálculo de la extensión. Finalmente, la última combinación de masas fue de $1,502kg$, con la que, por última vez, repetimos el proceso de cálculo de la extensión del resorte con el peso proporcionado. Posterior a repetir este proceso los 4 integrantes del grupo, se sacó un promedio de la deformación del resorte para usarlo como medida al momento de realizar el calculo de la constante elástica.
+
+Con estos datos, utilizamos el peso como referencia, teniendo en cuenta que, en el punto de equilibrio, el resorte ya no se extiende ni se contrae. En este punto, el resorte debe ejercer una fuerza opuesta al peso, de igual magnitud, para que no continúe bajando ni subiendo. Por ende, con estos datos sabemos la fuerza que ejerce el resorte y la deformación de cada uno. Utilizando estos dos datos, despejamos el valor de la constante elástica de cada resorte.
+
+
+\subsection{Parte 2 -Determinar constante elástica de resortes en serie} \label{Procedimiento-Parte-2}
+
+Para esta parte, unimos los resortes y los colgamos en conjunto en el mismo instrumento de antes junto a la regla, a lo cual medimos el largo de estos en conjunto sin ninguna fuerza actuando sobre ellas exceptuando su propio peso, teniendo en cuenta los errores ya anteriormente dichos respecto a las longitudes y la regla.
+
+Una vez medidas las longitudes realizamos las mismas combinaciones de masa que en los resortes por separado, para los resortes en serie, siguiendo tambien el paso de, posterior a la medición hecha por cada uno respecto al nuevo largo del resorte, se le resta el largo original de los resortes sin ninguna fuerza excepto su propio peso actuando sobre ellos, para así tener la deformación precisa de cada resorte con las respectivas masas, una vez hecho esto con las 4 mediciones, se le saca un promedio a la deformación con la respectiva masa y, finalmente, con esta deformación y asumiendo que los resortes ejercen una fuerza elástica contraria al peso de las masas en el punto de equilibrio, empezamos a calcular el valor de la constante elástica de los resortes en serie.
+
+Siendo de esta forma todo el proceso experimental realizado para encontrar los valores de las constantes elásticas por mi grupo, 
+
+
+\section{Resultados}
+
+\subsection{Constantes elásticas de los resortes individuales}
+
+\begin{table}[H]
+    \centering
+    \caption{Tabla configuraciones resorte 1}
+    \label{tab:tabla1}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        Nº & $\bar{L}_0$ & $\bar{x}$ & $\Delta{x}$ & $F$ & $\Delta{F}$ \\
+        \midrule
+        1 & $0,144 m$ & $0,089 m$ & $\pm{0,0005} m$ & $2,45 N$ & $\pm{0,001} N$ \\
+        2 & $0,144 m$ & $0,173 m$ & $\pm{0,0005} m$ & $4,90 N$ & $\pm{0,001} N$ \\
+        3 & $0,144 m$ & $0,260 m$ & $\pm{0,0005} m$ & $7,36 N$ & $\pm{0,001} N$ \\
+        4 & $0,144 m$ & $0,344 m$ & $\pm{0,0005} m$ & $9,83 N$ & $\pm{0,001} N$ \\
+        5 & $0,144 m$ & $0,428 m$ & $\pm{0,0005} m$ & $12,3 N$ & $\pm{0,001} N$ \\
+        6 & $0,144 m$ & $0,515 m$ & $\pm{0,0005} m$ & $14,7 N$ & $\pm{0,001} N$ \\
+         \bottomrule
+    \end {tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Tabla configuraciones resorte 2}
+    \label{tab:tabla2}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        Nº & $\bar{L}_0$ & $\bar{x}$ & $\Delta{x}$ & $F$ & $\Delta{F}$ \\
+        \midrule
+        1 & $0,194 m$ & $0,093 m$ & $\pm{0,0005} m$ & $2,45 N$ & $\pm{0,001} N$ \\
+        2 & $0,194 m$ & $0,188 m$ & $\pm{0,0005} m$ & $4,90 N$ & $\pm{0,001} N$ \\
+        3 & $0,194 m$ & $0,278 m$ & $\pm{0,0005} m$ & $7,36 N$ & $\pm{0,001} N$ \\
+        4 & $0,194 m$ & $0,368 m$ & $\pm{0,0005} m$ & $9,83 N$ & $\pm{0,001} N$ \\
+        5 & $0,194 m$ & $0,459 m$ & $\pm{0,0005} m$ & $12,3 N$ & $\pm{0,001} N$ \\
+        6 & $0,194 m$ & $0,547 m$ & $\pm{0,0005} m$ & $14,7 N$ & $\pm{0,001} N$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{resorte1_grafico.png}
+    \caption{gráfico F vs. x del resorte 1.}
+    \label{fig:grafico1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resorte2_grafico.png}
+    \caption{gráfico F vs. x del resorte 2.}
+    \label{fig:grafico2}
+\end{figure}
+
+Para el resorte 1, la pendiente de la recta asignada es de $a=29,46$, el intercepto con el eje F es de $b=-0,39$ y la constante k del resorte 1 es de $k=29,46 N/m$.
+Para el resorte 2, la pendiente de la recta asignada es de $a=27,65$, el intercepto con el eje F es de $b=-0,42$ y la constante k del resorte 2 es de $k=27,65 N/m$.
+En ambos casos, tener presente que las barras de error son bastante poco visibles debido a que es del orden de los milimetros y el gráfico está en el orden de metros.
+
+\subsection{Constante elástica equivalente del sistema en serie}
+
+\begin{table}[H]
+    \centering
+    \caption{Tabla configuraciones resortes en serie}
+    \label{tab:tabla3}
+    \begin{tabular}{c c c c c c}
+        \toprule
+        Nº & $\bar{L}_0$ & $\bar{x}$ & $\Delta{x}$ & $F$ & $\Delta{F}$ \\
+        \midrule
+        1 & $0,388 m$ & $0,177 m$ & $\pm{0,0005} m$ & $2,45 N$ & $\pm{0,001} N$ \\
+        2 & $0,388 m$ & $0,355 m$ & $\pm{0,0005} m$ & $4,90 N$ & $\pm{0,001} N$ \\
+        3 & $0,388 m$ & $0,530 m$ & $\pm{0,0005} m$ & $7,36 N$ & $\pm{0,001} N$ \\
+        4 & $0,388 m$ & $0,705 m$ & $\pm{0,0005} m$ & $9,83 N$ & $\pm{0,001} N$ \\
+        5 & $0,388 m$ & $0,880 m$ & $\pm{0,0005} m$ & $12,3 N$ & $\pm{0,001} N$ \\
+        6 & $0,388 m$ & $1,05 m$ & $\pm{0,0005} m$ & $14,7 N$ & $\pm{0,001} N$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{resortes_en_serie_grafico.png}
+    \caption{gráfico F vs. x de los resortes en serie.}
+    \label{fig:graficoserie}
+\end{figure}
+
+Para los resortes en serie, la pendiente de la recta asignada es de $a=14,35$, el intercepto con el eje F es de $b=-0,35$ y la constante k de los resortes en serie es igual a $k=14,35 N/m$.
+Tener en cuenta que las barras de error son muy poco visibles debido a que el error está en el orden de los milímetros y el gráfico está en el orden de los metros.
+
+\subsection{Comparación entre resultados experimentales y predicción teórica}
+
+    \begin{table}[H]
+    \centering
+        \caption{tabla resumen}
+        \label{tab:tabla4}
+        \begin{tabular}{c c c}
+        \toprule
+            Sistema & Pendiente a & Intercepto b\\
+        \midrule
+            Resorte 1 & 29,46 & -0,39 \\
+            Resorte 2 & 27,65 & -0,42 \\
+            R1 + R2 (serie) & 14,35 & -0,35 \\
+        \bottomrule
+        \end{tabular}
+    \end{table}
+
+Para encontrar nuestra predicción teórica de la constante de $k_{1+2 teo}$ usaremos la equivalencia $\frac{1}{k_{1+2 teo}} = \frac{1}{k_1} + \frac{1}{k_2}$. 
+
+$\frac{1}{k_{1+2 teo}} = \frac{1}{29,46} + \frac{1}{27,65} = 14,26$N/m.
+
+Por ende, si lo comparamos con $k_{1+2 exp} = 14,35$, N/m tenemos que la constante teorica es bastante acertado con respecto a la constante experimental.
+
+
+\section{Análisis y conclusiones}
+
+Se engancharon ambos resortes en serie para verificar una conexión estable y se midió nuevamente la longitud natural del sistema combinado $L_0$. Utilizando las combinaciones de masas, se midió la fuerza aplicada y la nueva longitud total $L$ del sistema para calcular la elongación del conjunto (Ecuación 4 y 7).  
+ Con estos valores se completó la tabla de mediciones correspondiente, se graficó $F$ en función de $x$ y se realizó un ajuste lineal para obtener la constante elástica equivalente experimental $k_1+2exp$ del sistema en serie.
+
+ Se completó una tabla resumen final con las pendientes e interceptos de ambos resortes individuales y del sistema en serie. El propósito final fue verificar si se cumplía la igualdad teórica de asociaciones en serie expresada en la Ecuación 5, comparando el valor teórico con el experimental y evaluando posibles fuentes de discrepancia e incertidumbre (como el efecto de la masa de los resortes).
+
+\textbf{\underline{Extensión máxima del informe:} 15 páginas}.
+
+\begin{thebibliography}{99}
+
+\bibitem{libro} Nombre del autor. \textit{Título del libro}. Año.
+
+\bibitem{apunte} Nombre del profesor. \textit{Nombre del curso}. Semestre y año en el que fue entregado el apunte.
+
+\bibitem{web} TikTok de @usuario. Disponible en: \url{https://www.tiktok.com/}.
+
+\end{thebibliography}
+
+\end{document}
