@@ -51,8 +51,8 @@
                           & Mauricio Ortega \\
                           & Samuel Saez \\[0.2cm]
     \textbf{Profesora:}   & Constanza Rivas \\
-    \textbf{Ayudantes:}    & Nombre Apellido \\
-                           & Nombre Apellido\\[0.2cm]
+    \textbf{Ayudantes:}    & Lixin Lai \\
+                           & Annelies Fullgraff \\[0.2cm]
     \textbf{Fecha de entrega:} \today
 \end{tabular}
 
@@ -69,21 +69,76 @@ En muchas aplicaciones físicas e ingenieras, los sistemas mecánicos están com
 
 \section{Fundamento teórico}
 
-Deduzcan y presenten las ecuaciones de:
+En esta sección presentamos las relaciones físicas y matemáticas necesarias para entender el comportamiento de los resortes y analizar nuestros resultados experimentales de manera adecuada.
 
+\subsection{Relación entre fuerza elástica y elongación (Ley de Hooke)}
+Físicamente, cuando le aplicamos una fuerza a un material elástico como un resorte, este se deforma. La Ley de Hooke nos dice que la fuerza que hace el resorte para intentar volver a su forma original es proporcional a qué tanto lo estiramos o comprimimos.
+
+La ecuación que describe esto es:
+\begin{equation}
+F_e = -k \cdot \Delta x
+\end{equation}
+
+Donde:
 \begin{itemize}
-    \item Relación entre fuerza elástica y elongación (ley de Hooke)
-    \item Condición de equilibrio que lleva a determinar la fuerza
+    \item $F_e$: es la fuerza elástica del resorte.
+    \item $k$: es la constante elástica. Nos indica qué tan ``rígido'' es el resorte.
+    \item $\Delta x$: es la elongación o cuánto cambió su longitud ($x_{final} - x_{inicial}$). El signo negativo se refiere a que el resorte siempre ejerce fuerza en dirección contraria a nuestra deformación.
 \end{itemize}
 
-Indique además, sin necesidad de deducirlas completas, las ecuaciones de:
+\subsection{Condición de equilibrio para determinar la fuerza}
+Basándonos en la Primera Ley de Newton, si nuestro sistema está colgado y se queda quieto (en reposo), todas las fuerzas se anulan. Al colgar una masa del resorte, tenemos el peso tirando hacia abajo y la fuerza del resorte tirando hacia arriba.
 
+La ecuación queda así:
+\begin{equation}
+    F_e - P = 0 \implies k \cdot \Delta x = m \cdot g
+\end{equation}
+
+Donde:
 \begin{itemize}
-    \item Constante elástica equivalente del sistema de resortes conectados en serie
-    \item Cálculo de propagación de error
+    \item $m$: es la masa que colgamos.
+    \item $g$: es la aceleración de la gravedad.
+    \item $P$: es el peso de la masa ($m \cdot g$). Al igualar el peso con la fuerza elástica, podemos determinar la fuerza exacta que está haciendo el resorte.
 \end{itemize}
 
-En esta sección debe presentar las relaciones físicas y las deducciones matemáticas necesarias para analizar los resultados. No basta con enumerar fórmulas, sino que se debe explicar de dónde provienen y qué representan sus variables.
+\subsection{Constante elástica equivalente de resortes en serie}
+Cuando conectamos un resorte a continuación de otro (en serie), el sistema completo se comporta como un nuevo resorte más largo y flexible.
+
+Su ecuación teórica es:
+\begin{equation}
+    \frac{1}{k_{eq}} = \frac{1}{k_1} + \frac{1}{k_2} + \dots + \frac{1}{k_n}
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $k_{eq}$: es la constante elástica equivalente de todo el sistema junto.
+    \item $k_1, k_2, \dots$: son las constantes de cada resorte individual. Se suman de forma inversa porque la tensión (fuerza) que soportan es la misma para todos, pero sus estiramientos individuales se van sumando, resultando en un sistema que cuesta menos estirar.
+\end{itemize}
+
+subsection{Cálculo de propagación de error}
+Como ninguna medición en el laboratorio es absolutamente exacta (por ejemplo, nuestra regla tiene un error de $0,0005$\,m y la báscula de $0,001$\,kg), cualquier cálculo que hagamos usando esos datos también arrastrará una incertidumbre.
+
+La ecuación general para calcular esto es:
+\begin{equation}
+    \Delta q = \sqrt{\left(\frac{\partial q}{\partial x} \cdot \Delta x\right)^2 + \left(\frac{\partial q}{\partial y} \cdot \Delta y\right)^2 + \dots}
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $\Delta q$: es el error absoluto de nuestro resultado final calculado (como el error final al calcular nuestra constante $k$).
+    \item $\Delta x, \Delta y$: son los errores individuales de nuestros instrumentos de medición.
+    \item $\frac{\partial q}{\partial x}$: es la derivada parcial de la función respecto a esa variable. En palabras simples, representa qué tan sensible es nuestro resultado final frente a equivocarnos un poquito en esa medición en particular.
+\end{itemize}
+%\begin{itemize}
+%    \item Relación entre fuerza elástica y elongación (ley de Hooke)
+%   \item Condición de equilibrio que lleva a determinar la fuerza
+%\end{itemize}
+%Indique además, sin necesidad de deducirlas completas, las ecuaciones de:
+%\begin{itemize}
+%    \item Constante elástica equivalente del sistema de resortes conectados en serie
+%    \item Cálculo de propagación de error
+%\end{itemize}
+%En esta sección debe presentar las relaciones físicas y las deducciones matemáticas necesarias para analizar los resultados. No basta con enumerar fórmulas, sino que se debe explicar de dónde provienen y qué representan sus variables.
 
 \section{Procedimiento experimental}
 
